@@ -25,7 +25,9 @@ import {uniqueId} from './uniqueId';
     <span className="Outcome">Expense<ol className="badge badge-pills badge-danger">${expense}</ol></span>
         </div>
         <div className="add-list">
-            <form>
+        <div className="row">
+          <div className="col-6-lg">
+          <form>
                 <label>Add Item</label>
                 <div className="form-group">
                   <input type="text" className="form-control" value={item} onChange={(e) => setItem(e.target.value)} />
@@ -39,13 +41,18 @@ import {uniqueId} from './uniqueId';
                   </div>
                 </div>
             </form>
-              <hr />
+          </div>
+          <div className="col-6-lg">
+          <hr />
               <div className="list">
                 <h2 className="text-dark mb-5">Transaction History</h2>
                 <ul>
                 {transactions.map(data => <li key={data.id }>{date}  {data.item}  ${data.value} <button  className="btn btn-danger btn-sm" onClick={() => onDelete(data.id)}>X</button></li>)}
               </ul>
               </div>
+          </div>
+          </div>
+              
         </div>
         </>
      );

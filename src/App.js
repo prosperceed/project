@@ -50,7 +50,6 @@ import {uniqueId} from './components/uniqueId';
     const handleAddTransaction = item => {
       let newTransactions = [...transactions, item]
       setTransactions(newTransactions);
-      console.log( income, expense)
     }
 
     const date = () => {
@@ -64,12 +63,11 @@ import {uniqueId} from './components/uniqueId';
 
     useEffect(() => {
       transactionType();
-    }, []);
+    }, [transactions]);
     
 
     useEffect(() => {
       transactionType()
-      
     }, [transactions]);
     
 
